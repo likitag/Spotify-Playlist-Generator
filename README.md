@@ -72,7 +72,8 @@ Users can enter their musical preferences as well as a desired playlist time dur
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+
+<img src='https://github.com/likitag/Spotify-Playlist-Generator/blob/master/Wire%20frames%20.jpg' title='Wire Frames' width='250' alt='Wire Frames' />
 
 
 
