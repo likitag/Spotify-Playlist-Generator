@@ -122,5 +122,16 @@ Category
 
 ### Networking
 - [Add list of network requests by screen ]
+- GET / reccomendations / available-genre-seeds
+   - retrieves a list of available genre seeds that users can select from  
+- GET /reccomendations: 
+   -  Query: up to 5 seed artists, up to 5 seed genres, up to 5 seed tracks, limit (target size of of the list of recommended tracks)
+- Get /me/ tracks 
+- POST /user /user_id/ playlist 
+   - creates a playlist. Null until items are added to playlist 
+- POST / playlists / playlist_id / tracks
+   - add items to playlist
+- remove playlist items
+- 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
