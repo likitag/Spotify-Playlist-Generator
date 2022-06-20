@@ -29,16 +29,14 @@ Users can enter their musical preferences as well as a desired playlist time dur
 
 * Users are able to login/sign-up/logout from the application
 * Users are able to enter desired time length and genre/artist preferences for their customized playlist
-* Users are able to see other user's playlists
 * Users can edit/delete playlists
 
 
 **Optional Nice-to-have Stories**
 
 * Users have a feed that shows what playlists their friends are listening to 
-* Users can leave react emojis to feed items
 * Users can categorize their playlists 
-* Calendar feature that shows most listened to song/artist each day (if spotify allows you to access this information)
+* Users are able to see other user's playlists
 
 
 ### 2. Screen Archetypes
@@ -87,51 +85,63 @@ Users can enter their musical preferences as well as a desired playlist time dur
 
 ### Models
 [Add table of models]
+
 Playlist
-
-
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| objectId    | String     | unique id for the user's playlist (default)     |
-| author   | Pointer to User    | playlist author     |
+| objectId    | String     | unique Parse id for the user's playlist (default)     |
+| playlistId | String | Spotify playlist Id |
+| author   | String   | holds the object Id of the user that created this playlist    |
 | createdAt   | DateTime    | date when playlist is created (default field)     |
-| Song List  | List | List of Song objects      |
-| Category  | Pointer to Category | category of thr playlist    |
+| Spotify reccomended List | 
+| Song List  | JSON Array | holds all the ids of the songs within this playlist   |
+| Desired Length | Integer | user input of desired playlist time length |
 
 Song
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| objectId    | String     | unique id for the song (default)     |
-| artist   | String    | artist of song     |
-| duration   | DateTime    | time length of song     |
-| Genre | String | Genre of music      |
+| objectId    | String     | unique Parse id for the song (default) |
+| trackId | String | spotify id for the specified track |
+| artist   | String    | spotify id of artist of the song    |
+| duration   | Integer    | time length of song     |
+| Genre | String | Genre of music from available spotify genres |
 
-Category
+
+
+User
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| objectId    | String     | unique id for the category (default)     |
-| title  | String    | category of title     |
-| image   | File   | image for the category     |
-| playlists  | Integer   | number of playlists    |
-
-
-
+| objectId    | String     | unique Parse id for the user(default)     |
+| username | String    | username for account    |
+| password   | String  | user's account password    |
+| email  | String   | email associated with user |
+| profile image  | File   | Parse File for the users profile picture |
+| favorite artists  | JSON Array  | holds all the Spotify ID's associated with the user's favorite artists  |
+| favorite genres  | JSON Array  | holds all the user's favorite genres (from the list of spotify genres)  |
+| favorite tracks  | JSON Array  | holds all the Spotify ID's associated with the user's favorite tracks |
 
 
 
 
 ### Networking
 - [Add list of network requests by screen ]
-- GET / reccomendations / available-genre-seeds
-   - retrieves a list of available genre seeds that users can select from  
 - GET /reccomendations: 
    -  Query: up to 5 seed artists, up to 5 seed genres, up to 5 seed tracks, limit (target size of of the list of recommended tracks)
-- Get /me/ tracks 
+   -spotifyApi.getRecommendations().limit(...).seed_artists("...").seed_genres("...").seed_tracks("...").build();
+
 - POST /user /user_id/ playlist 
    - creates a playlist. Null until items are added to playlist 
+   - spotifyApi.createPlaylist(userId, name).collaborative(false).public_(false).description(...).build();
+
 - POST / playlists / playlist_id / tracks
    - add items to playlist
-- remove playlist items
-- 
-- [Create basic snippets for each Parse network request]
+
+- GET / reccomendations / available-genre-seeds
+   - retrieves a list of available genre seeds that users can select from  
+   
+- DELETE /playlists / playlist_id / tracks 
+   - remove one or more items from a user's playlist 
+
+
+- [Create basic snippets for each Parse network request] 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
