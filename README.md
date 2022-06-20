@@ -93,8 +93,8 @@ Playlist
 | playlistId | String | Spotify playlist Id |
 | author   | String   | holds the object Id of the user that created this playlist    |
 | createdAt   | DateTime    | date when playlist is created (default field)     |
-| Spotify reccomended List | 
-| Song List  | JSON Array | holds all the ids of the songs within this playlist   |
+| Spotify recommended List | JSON Array  | holds all the spotify id's for the set of recommended songs |
+| Song List  | JSON Array | holds all the ids of the selected songs for this playlist   |
 | Desired Length | Integer | user input of desired playlist time length |
 
 Song
