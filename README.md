@@ -111,20 +111,20 @@ Playlist
 | author   | String   | holds the object Id of the user that created this playlist   |
 | createdAt   | DateTime    | date when playlist is created (default field)     |
 | Spotify recommended List | JSON Array  | holds all the spotify id's for the set of recommended songs |
-| Song List  | JSON Array | holds all the ids of the selected songs for this playlist  |
-| Desired Length | Integer | user input of desired playlist time length |
-| Rating | Integer | Rating that the user gives the playlist |
-| Top song | Song | user selects their favorite song from the playlist |
-| Worst song | Song | user selects least favorite song from playlist |
+| Song List  | JSON Array | holds all the songs for this playlist  |
+| Length | Integer | playlist time length |
+| Like | Boolean | Whether or not user likes song |
+
 
 Song
 | Property | Type | Description |
 | -------- | -------- | -------- |
 | objectId    | String     | unique Parse id for the song (default) |
 | trackId | String | spotify id for the specified track |
-| artist   | String    | spotify id of artist of the song    |
+| artist   | String    | Artist of the song    |
 | duration   | Integer    | time length of song     |
 | Genre | String | Genre of music from available spotify genres |
+| Tempo | String | tempo of the song |
 
 
 User
@@ -135,9 +135,10 @@ User
 | password   | String  | user's account password    |
 | email  | String   | email associated with user |
 | profile image  | File   | Parse File for the users profile picture |
-| favorite artists  | JSON Array  | holds all the Spotify ID's associated with the user's favorite artists  |
-| favorite genres  | JSON Array  | holds all the user's favorite genres (from the list of spotify genres)  |
-| favorite tracks  | JSON Array  | holds all the Spotify ID's associated with the user's favorite tracks |
+| favorite artists  | JSON Array  | holds all  user's favorite artists  |
+| favorite albums  | JSON Array  | holds all the user's favorite albums  |
+| favorite tracks  | JSON Array  | holds all the user's favorite tracks |
+| saved playlists | JSON Array | holds all the user's saved playlists |
 
 
 
