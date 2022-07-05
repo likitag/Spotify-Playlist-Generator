@@ -57,6 +57,12 @@ Users can enter their musical preferences as well as a desired playlist time dur
 
 * suggestions screen 
    * Based on the user's playlist rating, recommend other playlists.  
+* Social screen 
+   * Users see a feed of what other people are listening to 
+* Post screen
+   * Users can share playlists that they have created with captions.
+
+ 
 
 
 
